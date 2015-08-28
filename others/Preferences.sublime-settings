@@ -1,0 +1,26 @@
+{
+	"caret_extra_width": 1,
+	"color_scheme": "Packages/User/SublimeLinter/Afterglow-twilight (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"findreplace_small": true,
+	"font_options":
+	[
+		"subpixel_antialias",
+		"no_round"
+	],
+	"font_size": 12,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"scroll_past_end": true,
+	"scroll_speed": 5.0,
+	"sidebar_small": true,
+	"tab_size": 2,
+	"tabs_small": true,
+	"theme": "Spacegray.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
