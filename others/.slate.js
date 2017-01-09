@@ -21,7 +21,7 @@ var moveUp = slate.operation('move', {
 
 var moveDown = slate.operation('move', {
   'x': 'screenOriginX',
-  'y': 'screenSizeY/2',
+  'y': 'screenOriginY+screenSizeY/2',
   'width': 'screenSizeX',
   'height': 'screenSizeY/2'
 });
@@ -34,58 +34,151 @@ var moveLeft = slate.operation('move', {
 });
 
 var moveRight = slate.operation('move', {
-  'x': 'screenSizeX/2',
+  'x': 'screenOriginX+screenSizeX/2',
   'y': 'screenOriginY',
   'width': 'screenSizeX/2',
   'height': 'screenSizeY'
 });
 
-var throwUp = slate.operation('throw', {
-  screen: 0,
+var moveCornerTopLeft = slate.operation('move', {
+  'x': 'screenOriginX',
+  'y': 'screenOriginY',
+  'width': 'screenSizeX/2',
+  'height': 'screenSizeY/2'
 });
 
-var throwDown = slate.operation('throw', {
+var moveCornerTopRight = slate.operation('move', {
+  'x': 'screenOriginX+screenSizeX/2',
+  'y': 'screenOriginY',
+  'width': 'screenSizeX/2',
+  'height': 'screenSizeY/2'
+});
+
+var moveCornerBottomRight = slate.operation('move', {
+  'x': 'screenOriginX+screenSizeX/2',
+  'y': 'screenOriginY+screenSizeY/2',
+  'width': 'screenSizeX/2',
+  'height': 'screenSizeY/2'
+});
+
+var moveCornerBottomLeft = slate.operation('move', {
+  'x': 'screenOriginX',
+  'y': 'screenOriginY+screenSizeY/2',
+  'width': 'screenSizeX/2',
+  'height': 'screenSizeY/2'
+});
+
+var moveToMonitorTwo = slate.operation('throw', {
+  screen: 2,
+});
+
+var moveToMonitorOne = slate.operation('throw', {
   screen: 1,
 });
 
-var twoMonitorLayout = slate.layout('twoMonitorLayout', {
+var moveToMonitorZero = slate.operation('throw', {
+  screen: 0,
+});
+
+var moveToNext = slate.operation('throw', {
+  screen: 'next',
+});
+
+var moveToPrevious = slate.operation('throw', {
+  screen: 'previous',
+});
+
+var threeMonitorLayout = slate.layout('threeMonitorLayout', {
   '1Password 6': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorTwo],
     'repeat': true,
     'sort-title': true,
   },
   'Finder': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorTwo],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Notes': {
+    'operations': [moveToMonitorTwo],
     'repeat': true,
     'sort-title': true,
   },
   'Google Chrome': {
-    'operations': [throwUp],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Sketch': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Slack': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Spotify': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorTwo],
     'repeat': true,
     'sort-title': true,
   },
   'Sublime Text': {
-    'operations': [throwUp],
+    'operations': [moveToMonitorOne],
     'repeat': true,
     'sort-title': true,
   },
   'Terminal': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorTwo],
+    'repeat': true,
+    'sort-title': true,
+  },
+});
+
+var twoMonitorLayout = slate.layout('twoMonitorLayout', {
+  '1Password 6': {
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Finder': {
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Notes': {
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Google Chrome': {
+    'operations': [moveToMonitorOne],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Sketch': {
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Slack': {
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Spotify': {
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Sublime Text': {
+    'operations': [moveToMonitorOne],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Terminal': {
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
@@ -93,42 +186,47 @@ var twoMonitorLayout = slate.layout('twoMonitorLayout', {
 
 var oneMonitorLayout = slate.layout('oneMonitorLayout', {
   '1Password 6': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Finder': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
+    'repeat': true,
+    'sort-title': true,
+  },
+ 'Notes': {
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Google Chrome': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Sketch': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Slack': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Spotify': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Sublime Text': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
   'Terminal': {
-    'operations': [throwDown],
+    'operations': [moveToMonitorZero],
     'repeat': true,
     'sort-title': true,
   },
@@ -141,6 +239,11 @@ var maximizeLayout = slate.layout('maximizeLayout', {
     'sort-title': true,
   },
   'Finder': {
+    'operations': [maximize],
+    'repeat': true,
+    'sort-title': true,
+  },
+  'Notes': {
     'operations': [maximize],
     'repeat': true,
     'sort-title': true,
@@ -179,16 +282,19 @@ var maximizeLayout = slate.layout('maximizeLayout', {
 
 slate.bindAll({
   'm:ctrl,alt,cmd': maximize,
-  'up:ctrl,alt,cmd': moveUp,
-  'down:ctrl,alt,cmd': moveDown,
-  'left:ctrl,alt,cmd': moveLeft,
-  'right:ctrl,alt,cmd': moveRight,
-  'up:ctrl,cmd': throwUp,
-  'down:ctrl,cmd': throwDown,
-  'right:ctrl,cmd': throwUp,
-  'left:ctrl,cmd': throwDown,
-  '=:ctrl,alt,cmd': slate.operation('layout', { 'name': twoMonitorLayout }),
+  'up:ctrl,cmd,shift': moveCornerTopLeft,
+  'right:ctrl,cmd,shift': moveCornerTopRight,
+  'left:ctrl,cmd,shift': moveCornerBottomLeft,
+  'down:ctrl,cmd,shift': moveCornerBottomRight,
+  'up:ctrl,cmd,alt': moveUp,
+  'right:ctrl,cmd,alt': moveRight,
+  'left:ctrl,cmd,alt': moveLeft,
+  'down:ctrl,cmd,alt': moveDown,
+  'left:ctrl,cmd': moveToPrevious,
+  'right:ctrl,cmd': moveToNext,
+  '=:ctrl,alt,cmd': slate.operation('layout', { 'name': maximizeLayout }),
   '-:ctrl,alt,cmd': slate.operation('layout', { 'name': oneMonitorLayout }),
-  '0:ctrl,alt,cmd': slate.operation('layout', { 'name': maximizeLayout }),
+  '0:ctrl,alt,cmd': slate.operation('layout', { 'name': twoMonitorLayout }),
+  '9:ctrl,alt,cmd': slate.operation('layout', { 'name': threeMonitorLayout }),
   '1:ctrl,alt,cmd': slate.operation('relaunch'),
 });
