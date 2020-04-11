@@ -1,0 +1,15 @@
+[color]
+ 	ui = true
+
+[core]
+ 	excludesfile = /Users/gabe/.gitignore
+
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+
+[user]
+	name = Gabriel Debeaupuis
+	email = gabriel.debeaupuis@gmail.com

@@ -1,26 +1,53 @@
 {
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
 	"caret_extra_width": 1,
-	"color_scheme": "Packages/User/SublimeLinter/Afterglow-twilight (SL).tmTheme",
+	"color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
 	"ensure_newline_at_eof_on_save": true,
 	"findreplace_small": true,
-	"font_options":
+	"folder_exclude_patterns":
 	[
-		"subpixel_antialias",
-		"no_round"
+		".svn",
+		".git",
+		".gem",
+		".hg",
+		".vagrant",
+		"CVS",
+		".gems",
+		"tmp",
+		"Faker",
+		"dist",
+		"backup",
+		"node_modules",
+		"bower_components",
+		"coverage"
 	],
-	"font_size": 12,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		100
 	],
 	"scroll_past_end": true,
 	"scroll_speed": 5.0,
 	"sidebar_small": true,
 	"tab_size": 2,
 	"tabs_small": true,
-	"theme": "Spacegray.sublime-theme",
+	"theme": "ayu-mirage.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"ui_separator": true
 }
