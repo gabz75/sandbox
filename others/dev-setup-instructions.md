@@ -56,3 +56,11 @@ brew tap heroku/brew && brew install heroku
 * SublimeLinter-eslint
 * SublimeLinter-rubocop
 * TypeScript
+
+#  VSCode
+
+Install Fira Code
+```
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+```
